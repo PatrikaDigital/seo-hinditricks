@@ -3,7 +3,8 @@ import { TitleForm } from "@/components/TitleForm";
 import { ResultCard } from "@/components/ResultCard";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { Newspaper, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
+import sonbarsaLogo from "@/assets/sonbarsa-logo.svg";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -45,12 +46,14 @@ const Index = () => {
       <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-gradient-primary">
-              <Newspaper className="h-5 w-5 text-primary-foreground" />
-            </div>
+            <img src={sonbarsaLogo} alt="SonBarsa Logo" className="h-10 w-auto" />
             <div>
-              <h1 className="font-semibold text-foreground">Hindi SEO Title Generator by SonBarsa</h1>
-              <p className="text-xs text-muted-foreground">Powered by SonBarsa</p>
+              <h1 className="font-semibold text-foreground">
+                Hindi SEO Title Generator by <span className="text-primary font-bold">SonBarsa</span>
+              </h1>
+              <p className="text-xs text-muted-foreground">
+                Powered by <span className="text-primary font-medium">SonBarsa</span>
+              </p>
             </div>
           </div>
         </div>
@@ -63,7 +66,7 @@ const Index = () => {
           <div className="text-center space-y-4">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-accent-foreground text-sm font-medium">
               <Sparkles className="h-4 w-4" />
-              SonBarsa AI-Powered SEO Optimization
+              <span className="text-primary font-bold">SonBarsa</span> AI-Powered SEO Optimization
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               हिंदी न्यूज़ टाइटल को{" "}
